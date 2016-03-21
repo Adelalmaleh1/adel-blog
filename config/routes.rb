@@ -1,5 +1,6 @@
 AdelBlog::Application.routes.draw do
 
+  devise_for :users
   root 'welcome#home'
   get 'about', to: 'welcome#about'
   resources :articles
