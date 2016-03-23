@@ -1,5 +1,9 @@
 class ArticlesController < ApplicationController
 	before_action :set_article, only: [:edit, :update, :show, :destroy]
+	before_action :add_current_user, axcept: [:index]
+
+
+
 	def index
 		@articles= Article.all
 
@@ -15,6 +19,7 @@ class ArticlesController < ApplicationController
 
 	def create
 		@article=Article.new(article_params)
+		@article.user=current_user
 		if @article.save
 		flash[:success] = "Article was successfully created"
 		redirect_to article_path(@article)
@@ -52,6 +57,13 @@ class ArticlesController < ApplicationController
 		params.require(:article).permit(:title, :description)
 	end
 
+	def add_current_user
+		unless user_signed_in?
+			
+			redirect_to user_session_path
+			flash[:danger] = "please sign in"
+		end
+	end
 
 end
 
