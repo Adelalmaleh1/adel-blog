@@ -1,10 +1,15 @@
 AdelBlog::Application.routes.draw do
 
+  get "users/create"
+  get "users/edit"
+  get "users/show"
   devise_for :users
   root 'welcome#home'
   get 'about', to: 'welcome#about'
-  resources :articles
+  resources :articles  
   
+ 
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
