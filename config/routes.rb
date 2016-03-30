@@ -2,11 +2,12 @@ AdelBlog::Application.routes.draw do
 
   get "users/create"
   get "users/edit"
-  get "users/show"
+  get 'user/:id' => 'users#show', as: :user
   devise_for :users
   root 'welcome#home'
   get 'about', to: 'welcome#about'
   resources :articles  
+  #resources :users
   
  
 
