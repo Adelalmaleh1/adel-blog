@@ -1,4 +1,4 @@
-<h1 align= "center">Users#show</h1>
-<p align= "center">Find me in app/views/users/show.html.erb</p>
-
-<li align= "center" ><%= image_tag(current_user.avatar.url(:thumb)) %></li>
+<h1 class= "text">Welcome to <%= @user.username %>'s page</h1>
+<li align= "center" ><%= image_tag(current_user.avatar.url(:medium)) %></li>
+<h2 class= "text"><%= @user.username %>'s Articles</h2>
+<%= render 'articles/article', obj: @user.articles %>
