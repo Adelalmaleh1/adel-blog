@@ -8,6 +8,9 @@ gem 'rails', '4.0.2'
 gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '3.2.0.2'
+gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate-bootstrap'
+
 gem 'sass-rails', '5.0'
 
 # Use Uglifier as compressor for JavaScript assets
@@ -36,6 +39,7 @@ group :doc do
 end
 
 gem 'paperclip', '~> 4.1'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
