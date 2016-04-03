@@ -14,9 +14,11 @@
 ActiveRecord::Schema.define(version: 20160330052043) do
 
   create_table "articles", force: true do |t|
-    t.string  "title"
-    t.text    "description"
-    t.integer "user_id"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "users", force: true do |t|

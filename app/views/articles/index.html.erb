@@ -1,4 +1,5 @@
 <h1 align="center">listing all articles</h1>
+
 <div align="center">
 	<%= will_paginate %>
 </div>
@@ -6,3 +7,10 @@
 <div align="center">
 	<%= will_paginate @posts %>
 </div>
+	<div align="center">
+		<%= will_paginate %>
+	</div>
+<%= render 'article', obj: @articles %>
+	<div align="center">
+		<%= will_paginate @articles %>
+	</div>
