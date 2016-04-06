@@ -1,13 +1,13 @@
 <h1 class= "text">Welcome to <%= @user.username %>'s page</h1>
 <li align= "center" ><%= image_tag(current_user.avatar.url(:medium)) %></li>
 <h2 class= "text"><%= @user.username %>'s Articles</h2>
+
 <div align= "center">
 	<%= will_paginate @user_articles %>
-<%= render 'articles/article', obj: @user_articles %>
-
-	<%= will_paginate @user_articles%>
 </div>
 <%= render 'articles/article', obj: @user_articles %>
+
+
 <div align= "center">
 	<%= will_paginate @user_articles%>
 </div>
