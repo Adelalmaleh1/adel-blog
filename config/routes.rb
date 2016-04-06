@@ -1,7 +1,7 @@
 AdelBlog::Application.routes.draw do
 
   get "users/create"
-  get "users/edit"
+  get "users/:id/edit" => 'users#show', as: :edit_user
   get 'user/:id' => 'users#show', as: :user
   get 'users' => 'users#index', as: :user_index
   devise_for :users
