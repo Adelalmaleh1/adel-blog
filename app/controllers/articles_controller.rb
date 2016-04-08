@@ -5,9 +5,12 @@ class ArticlesController < ApplicationController
 
 
 	def index
-		@articles= Article.paginate(:page => params[:page], :per_page => 5)
-		
-
+		if params[:search]	
+			@articles= Article.search(params[:search]).order("created_at DESC")
+		else
+			@articles= Article.all.order('created_at DESC')
+		end
+			@articles= Article.paginate(:page => params[:page], :per_page => 2)	
 	end
 
 	def new
