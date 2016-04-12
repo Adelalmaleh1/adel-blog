@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-	belogs_to :articles
+	belongs_to :articles
 	validates :name, presence: true, length: { minimum: 3, maximum: 25}
 	validates_uniqueness_of :name
 end

@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+	before_action :require_login, axcept: [:index]
+
 	def index
 		@categories=Category.all
 	end
@@ -26,4 +28,11 @@ class CategoriesController < ApplicationController
     params.require(:category).permit(:name)
   end
 
+		def require_login
+    unless current_user
+      redirect_to user_session_path
+      flash[:danger] = "Please login first"
+    end
+  end
+   
 end
